@@ -1,11 +1,13 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import ListRender from './components/ListRender.jsx'
 import ConditionalRender from './components/ConditionalRender.jsx'
 import ShowUserName from './components/ShowUserName.jsx'
 import CarProps from './components/CarProps.jsx'
+import Container from './components/Container.jsx'
+import ExecuteFunction from './components/ExecuteFunction.jsx'
+import Message from './components/Message.jsx'
+import ChangeMessageState from './components/ChangeMessageState.jsx'
 
 function App() {
   const [userName] = useState("Mintinho") //poder ser só uma cont normal tbm pra funcionar o props
@@ -15,6 +17,16 @@ function App() {
     {id: 2, brand: "KIA", color: "Verde", newCar: false, km: 116848},
     {id: 3, brand: "VW", color: "Vermelho", newCar: false, km: 569},
   ]
+
+  function showMessage() {
+    console.log("Evento do componente pai");
+  }
+
+  const [message, setMessage] = useState("")
+
+  const handleMessage = (msg) => {
+    setMessage(msg)
+  }
 
   return (
     <>
@@ -37,6 +49,7 @@ function App() {
       <h2>Loop em array de objetos. Render de lista em compo</h2>
       {cars.map((car) => (
         <CarProps
+          key={car.id}
           brand={car.brand}
           color={car.color}
           km={car.km}
@@ -44,6 +57,21 @@ function App() {
         />
       ))}
 
+      <h2>Prop Children</h2>
+      <Container myValue="teste1">
+        <p>Aqui esta o conteúdo da tag container no App</p>
+      </Container>
+
+      <Container myValue="teste2">
+        <h4>Reutilizando o container aqui</h4>
+      </Container>  
+      
+      <h2>Função como Props</h2>
+      <ExecuteFunction myFunction={showMessage}/>
+
+      <h2>State lift</h2>
+      <Message msg={message}/>
+      <ChangeMessageState handleMessage={handleMessage}/>
 
     </>
   )
