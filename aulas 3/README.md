@@ -7,4 +7,7 @@ Conteudo de aula:
   - Props
   - Reaproveitamento de componentes
   - Renderização de lista em componente
+  - Prop children
+  - Função como prop
+  - State lift
   
