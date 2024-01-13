@@ -8,6 +8,7 @@ import Container from './components/Container.jsx'
 import ExecuteFunction from './components/ExecuteFunction.jsx'
 import Message from './components/Message.jsx'
 import ChangeMessageState from './components/ChangeMessageState.jsx'
+import UserDetails from './components/UserDetails.jsx'
 
 function App() {
   const [userName] = useState("Mintinho") //poder ser só uma cont normal tbm pra funcionar o props
@@ -27,6 +28,13 @@ function App() {
   const handleMessage = (msg) => {
     setMessage(msg)
   }
+
+  const users = [
+    {id: 1, nome: "Barb", idade: 28},
+    {id: 2, nome: "Mint", idade: 1},
+    {id: 3, nome: "Maya", idade: 7},
+    {id: 4, nome: "Lucas", idade: 43},
+  ]
 
   return (
     <>
@@ -72,6 +80,15 @@ function App() {
       <h2>State lift</h2>
       <Message msg={message}/>
       <ChangeMessageState handleMessage={handleMessage}/>
+
+      <h2>Tarefinha da seção</h2>
+      {users.map((user) => (
+        <UserDetails
+          key={user.id}
+          nome={user.nome}
+          idade={user.idade}
+        />
+      ))}
 
     </>
   )
