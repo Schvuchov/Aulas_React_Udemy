@@ -12,7 +12,7 @@ function App() {
   const [products, setProducts] = useState([]);
 
   //4-custom hook
-  const {data: itens} = useFetch(url)
+  const {data: itens, httpConfig, loading, error} = useFetch(url)
 
 
   const [name, setName] = useState("")
@@ -37,17 +37,21 @@ function App() {
       price,
     }
 
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(product),
-    })
+    // const res = await fetch(url, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json"
+    //   },
+    //   body: JSON.stringify(product),
+    // })
 
-    //3 - carregamento dinâmico
-    const addedProduct = await res.json()
-    setProducts((prevProducts) => [...prevProducts, addedProduct])
+    // //3 - carregamento dinâmico
+    // const addedProduct = await res.json()
+    // setProducts((prevProducts) => [...prevProducts, addedProduct])
+
+    //5 - refatorando post
+    httpConfig(product, "POST")
+
     setName("")
     setPrice("")
   }
@@ -56,13 +60,19 @@ function App() {
   return (
     <div className="App">
       <h1>Lista de produtos</h1>
-      <ul>
-        {itens && itens.map((product) => (
-          <li key={product.id}>
-            {product.name} - R${product.price}
-          </li>
-        ))}
-      </ul>
+      {/**6 - loading */}
+      {loading && <p>Carregando dados....</p>}
+      {error && <p>{error}</p>}
+      {!error && (
+        <ul>
+          {itens && itens.map((product) => (
+            <li key={product.id}>
+             {product.name} - R${product.price}
+            </li>
+          ))}
+        </ul>
+      )}
+      
 
       <div className="add-product">
         <form onSubmit={handleSubmit}>
@@ -82,7 +92,9 @@ function App() {
             name="price" 
             onChange={(e) => setPrice(e.target.value)}/>
           </label>
-          <input type="submit" value="Criar"/>
+          {/* 7 - state de loading no post */}
+          {loading && <input type="submit" disabled value="Aguarde"/>}
+          {!loading && <input type="submit" value="Criar"/>}
         </form>
       </div>
 

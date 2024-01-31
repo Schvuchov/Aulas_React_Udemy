@@ -29,6 +29,56 @@
       "id": "9213",
       "name": "cadeira",
       "price": "200"
+    },
+    {
+      "id": "e79b",
+      "name": "mouse",
+      "price": "60"
+    },
+    {
+      "id": "cbec",
+      "name": "mouse",
+      "price": "60"
+    },
+    {
+      "id": "4406",
+      "name": "mouse",
+      "price": "60"
+    },
+    {
+      "id": "2f57",
+      "name": "mouse",
+      "price": "60"
+    },
+    {
+      "id": "9c49",
+      "name": "mouse",
+      "price": "60"
+    },
+    {
+      "id": "392a",
+      "name": "suporte tela",
+      "price": "100"
+    },
+    {
+      "id": "0dd8",
+      "name": "suporte microfone",
+      "price": "20"
+    },
+    {
+      "id": "ef1e",
+      "name": "suporte microfone",
+      "price": "20"
+    },
+    {
+      "id": "4e5e",
+      "name": "suporte microfone",
+      "price": "20"
+    },
+    {
+      "id": "fb3b",
+      "name": "suporte microfone",
+      "price": "20"
     }
   ]
 }
