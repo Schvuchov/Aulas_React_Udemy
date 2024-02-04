@@ -9,5 +9,8 @@ Conteúdo das aulas:
   - Adicionando dados com React
   - Carregamento de dados dinâmico
   - Custom hook para resgate de dados
-  - Refatorando o POST (metade)
+  - Refatorando o POST
+  - Estado de loading
+  - Loading no POST
+  - Tratando erros
 
