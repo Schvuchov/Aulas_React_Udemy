@@ -1,3 +1,11 @@
 Conteúdo das aulas:
   - useState
   - useState e Inputs
+  - useReducer
+  - useReducer com action
+  - useEffect
+  - Array de dependências vazio no useEffect
+  - Array com dependências
+  - Cleanup no useEffect
+  - useContext
+  - useRef
