@@ -10,6 +10,18 @@ const HookUseRef = () => {
         numberRef.current = numberRef.current + 1
     })
 
+    // useRef e DOM
+    const inputRef = useRef()
+    const [ text, setText ] = useState("")
+
+    const handleSubmit = (e) => {
+      e.preventDefault()
+
+      setText("")
+
+      inputRef.current.focus()
+    }
+
   return (
     <div>
         <h2>useRef</h2>
@@ -18,6 +30,12 @@ const HookUseRef = () => {
         <button onClick={() => setCounter(counter + 1)}>Contador 1</button>
         <p>Counter 2: {counterB}</p>
         <button onClick={() => setCounterB(counterB + 1)}>Contador 2</button>
+
+        <h2>useRef com DOM</h2>
+        <form onSubmit={handleSubmit}>
+          <input type="text" ref={inputRef} value={text} onChange={(e) => setText(e.target.value)}/>
+          <input type="submit" value="Enviar"/>
+        </form>
         <hr />
     </div>
   )
