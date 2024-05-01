@@ -9,3 +9,11 @@ Conteúdo das aulas:
   - Cleanup no useEffect
   - useContext
   - useRef
+  - useRef e DOM
+  - useCallback
+  - useMemo
+  - useLayoutEffect
+  - useImperativeHandle
+  - Custom hooks
+  - React Developer Tools
+  - useDebugValue
