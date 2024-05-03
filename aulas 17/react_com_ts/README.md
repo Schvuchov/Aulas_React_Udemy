@@ -1,4 +1,16 @@
-# Getting Started with Create React App
+##Conteúdo das aulas:
+  - Instalção React com TS
+  - Estruturas de arquivos e pastas
+  - Variáveis no React
+  - Funções em componentes
+  - Criando componentes
+  - Importando componentes
+  - Desestruturando componentes
+  - Enum
+
+
+
+##Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
