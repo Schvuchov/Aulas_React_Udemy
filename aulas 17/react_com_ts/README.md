@@ -7,6 +7,9 @@
   - Importando componentes
   - Desestruturando componentes
   - Enum
+  - Types
+  - Context API
+  - Consumindo contexto
 
 
 
